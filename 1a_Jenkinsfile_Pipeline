@@ -15,7 +15,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'This is Deploy Stage.'
-                sh 'echo $EnviornmentName'
+                sh '''
+                    echo $EnviornmentName
+                    sudo ls /var/lib/jenkins/workspace
+                '''
             }
         }
     }
